@@ -1,0 +1,122 @@
+
+    :: javascript backend
+
+    - 일반 javascript : 클라이언트 (웹브라우저 - v8 javascript engine)
+    
+
+    ※ 필수 설치 : nodejs v16.x 이상
+
+       https://nodejs.org/en/
+
+
+    1) vscode + nodejs
+
+
+     새 폴더 생성   : 탐색기 or vscode 터미널(CTRL+`) 실행, mkdir [폴더명]
+
+
+     폴더로 이동 및 vscode 열기   :  cd [폴더명] && code .
+
+   2) server.js 생성    <--- touch server.js  or  vscode +아이콘!
+
+     - 기본 nodejs의 http 모듈(= javscript 파일이라는 뜻!)
+
+	const http = require("http");
+
+	const app = http.createServer((req, res)=>{
+	    res.writeHead(200,{"Content-Type":"text/pain"})
+ 	    res.write("welcome\n");
+ 	    res.end("!!response end!!");
+	})
+
+	app.listen(3000, () => {
+ 	   console.log("서버 실행중")
+	})
+    
+    ※ 다양한 HTTP 요청 메소드를 처리할 수 없음!! get, post, put, patch, delete,..
+
+    ※ 서버의 포트 구성시 주의사항 <---> 이미 사용중인 포트라면, 충돌!(=에러)
+
+       - 톰캣 : 8080 / 80 (web)
+       - 오라클DB : 1521 
+       - MYSQL : 3306
+       - FTP : 21
+       - SSH : 443
+       - 라이브서버 : 5500
+
+         ....등등....
+
+    ※ 대체로 backend-js의 경우 3000번 포트를 로컬(=localhost or 127.0.0.1) 에서
+       개발할때 사용함. (=실제 서비스 포트는 다를 수 있음)
+
+    ※ 추가 플러그인(=a.k.a 모듈)을 npm install [모듈명]으로 설치 해서 사용하거나
+                                    npm uninstall [모듈명] 으로 제거할 수 있음
+
+    ※ install 대신 i라고 축약해도 설치 가능!
+
+    3) nodejs에 express 모듈 설치!
+
+      https://www.npmjs.com/     에서   express 검색, 첫번째 결과 클릭!
+
+      - 사용법, 버전 히스토리, 활용방법 등등..기재
+
+     ※ express 공식사이트 : http://expressjs.com
+    
+     ※ 한글버전보다 영문버전의 문서 업데이트가 빠름 (한글 번역에 시간이 걸림..)
+
+
+     3-1. epress 설치    --> vscode Terminal에서 npm i express
+
+     ※ packge.lock.json : 패키지 정보(모듈의 이름, 버전등..)를 담는 파일
+
+        /node_modules  : 실제 사용중인 패키지 모듈의 정보가 포함된 폴더
+
+     ※ github에 업로드할 경우 /node_modules 등은 제외 : .gitignore (활용)
+
+
+    :: http 응답 코드
+
+      1xx : 요청한 경우
+  ★  2xx : 요청에 대한 응답이 정상적으로 이뤄진 경우
+      3xx : 페이지 이동하는 경우
+  ★  4xx : 사용자가 요청을 잘못한 경우 (404)
+  ★  5xx : 서버가 요청을 해석하지 못하거나,
+            처리 못하는 경우 (503)
+
+
+:: 실습예제 깃헙
+
+   [준비물] vscode설치, nodejs LTS 설치 [, git -client (깃 사용하려면 설치)]
+
+   https://github.com/seonyeonghun/backend-js
+
+   0) 작업할 위치를 선정, 해당위치에서 Terminal 또는 CMD로 아래 명령을 입력 &실행
+
+   1) git clone https://github.com/seonyeonghun/backend-js
+
+   2) npm install 명령 실행 --> /node_modules 를
+
+     생성하고, express 설치해주고...(자동처리)
+
+      - package.json, packaga-lock.json에 있는 module을
+        알아서 설치한다.
+
+   ※ nodemon은 전역(global) 설치라서, 개인이 직접 설치
+
+    npm install nodemon -g
+
+  3) nodemon app 
+             app.js     :  보통 .js는 생략하는 관계
+
+   ※ 사용자 PC의 nodejs가 사용하는 전용 공간을 전역으로 이해! (어딘지 몰라도 사용에는 지장이 없다!)
+
+
+
+
+
+
+
+
+
+
+

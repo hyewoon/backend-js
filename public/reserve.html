@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hanul tour!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/jquery-3.6.1.js"></script>
+</head>
+<body>
+    <h1>예약하기</h1>
+    <h2>예약자 확인
+    </h2>
+<nav>
+    <nav>
+        <ul id = "gnb">
+           <li><a href="/">처음으로</a></li> 
+           <li><a href="/reserve">예약확인</a></li> 
+           <li><a href="#">한울투어</a></li> 
+           <li><a href="#">고객센터</a></li> 
+        </ul>
+
+</nav>
+    <div class ="container" >
+    <form action="/send_reserve" id="checkForm" name="checkForm" autocomplete="off" method="post">
+        <label for="guest_name">예약자명</label>
+        <input type="text" id="guest_name" name="guest_name" placeholder="12자 이내를 입력하세요">
+        <label for="guest_phone">전화번호</label>
+        <input type=" tel" id="guest_phone" name="guest_phone" placeholder="-빼고 입력하세요">
+        <input type="submit" value="확인">
+    </form>
+    </div>
+    <script src="script/ajax.js"></script>
+</body>
+</html>
